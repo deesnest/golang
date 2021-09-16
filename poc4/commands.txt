@@ -1,0 +1,24 @@
+install docker
+install golang
+
+to login to dockerhub
+sudo docker login --username deepatp --password rathna4582
+
+to build the image from dockerfile
+
+docker build -t application3-tag .
+
+
+to create container by running the image, to map host port 8080 to container port 5050
+
+docker run -it --rm -p 8080:5052 application3-tag
+
+
+access application at
+
+<ip address> : 8080/welcome
+
+or
+
+localhost:8080/welcome
+
