@@ -1,0 +1,19 @@
+# The base go-image
+FROM golang:1.14-alpine
+
+RUN su -
+RUN mkdir /app1
+
+# Copy all files from the current directory to the app directory
+COPY . /app1
+
+# Set working directory
+WORKDIR /app1
+
+# Run command as described:
+# go build will build an executable file named server in the current directory
+#RUN go build hserver.go
+RUN go build mux.go
+#RUN go build routes.go
+# Run the server executable
+CMD ["/app1/mux"]
