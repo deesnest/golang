@@ -10,11 +10,12 @@ COPY . /app
 
 # Set working directory
 WORKDIR /app
-RUN yum install git
 # Run command as described:
 # go build will build an executable file named server in the current directory
 
-RUN go get github.com/aws/aws-sdk-go/...
+RUN  go get -u github.com/aws/aws-sdk-go
+#RUN go install github.com/aws/aws-sdk-go/...
+#RUN go
 RUN go build main1.go
 
 # Run the server executable
