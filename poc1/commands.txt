@@ -1,0 +1,25 @@
+install docker
+install golang
+
+
+to build the image from dockerfile
+
+docker build -t application-tag .
+
+
+to create container by running the image, to map host port 8080 to container port 5050
+
+docker run -it --rm -p 5051:5050 application-tag
+
+
+access application at
+
+<ip address> : 8080
+
+or
+
+localhost:8080
+
+
+
+ sudo docker run -it --rm -p 8080:5050 appl1.tag: latest
