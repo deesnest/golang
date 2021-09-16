@@ -1,0 +1,21 @@
+# The base go-image
+FROM alpine:latest
+FROM deepatp/golangcentos:base
+
+RUN su -
+RUN mkdir /app
+
+# Copy all files from the current directory to the app directory
+COPY . /app
+
+# Set working directory
+WORKDIR /app
+RUN yum install git
+# Run command as described:
+# go build will build an executable file named server in the current directory
+
+RUN go get github.com/aws/aws-sdk-go/...
+RUN go build main1.go
+
+# Run the server executable
+CMD [ "/app/main1" ]
