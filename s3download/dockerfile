@@ -5,8 +5,12 @@ FROM deepatp/golangcentos:base
 RUN su -
 RUN mkdir /app
 
+RUN yum install python3 -y
+RUN yum install pip3 awscli -y
 # Copy all files from the current directory to the app directory
 COPY . /app
+ENV AWS_ACCESS_KEY_ID=AKIAWXL533ZHLA7764DX
+ENV AWS_SECRET_ACCESS_KEY=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
 
 # Set working directory
 WORKDIR /app
@@ -16,7 +20,7 @@ WORKDIR /app
 RUN  go get -u github.com/aws/aws-sdk-go
 #RUN go install github.com/aws/aws-sdk-go/...
 #RUN go
-RUN go run main.go golangbucket golang.csv
+RUN go build main.go
 
 # Run the server executable
 #CMD [ "/app/main" ]
