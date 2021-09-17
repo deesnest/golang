@@ -22,6 +22,8 @@ RUN  go get -u github.com/aws/aws-sdk-go
 #RUN go
 RUN go build main.go
 RUN sh check.sh
-ENTRYPOINT ./main golangbucket deepa.csv
+#ENTRYPOINT ./main golangbucket golang.csv
+RUN ./main golangbucket golang.csv
+CMD ls -l
 # Run the server executable
 #CMD [ "/app/main" ]
