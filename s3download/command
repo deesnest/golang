@@ -1,0 +1,5 @@
+docker build -t cennt.t:latest
+
+docker run cennt.t:latest ./main golangbucket deepa.csv
+
+docker run cennt.t:latest
