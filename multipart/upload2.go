@@ -77,7 +77,7 @@ func main() {
 				UploadId: createdResp.UploadId,
 			})
 			if err != nil {
-        // god speed
+   
 				fmt.Println(err)
 				return
 			}
